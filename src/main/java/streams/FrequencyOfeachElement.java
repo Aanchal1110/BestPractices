@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class FrequencyOfeachElement {
     public static void frequencyOfEachElement(List<Integer> list){
-        Map<Integer, Long> collect = list.stream().collect(Collectors.groupingBy(ele -> ele, Collectors.counting()));
+        Map<Integer, Long> collect = list.stream().collect(Collectors.groupingBy(ele -> ele,java.util.TreeMap::new, Collectors.counting()));
         collect.forEach((key,value)-> System.out.println("Element: "+key+" Count: "+value));
     }
 
